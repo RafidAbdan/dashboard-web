@@ -102,10 +102,31 @@ error_reporting(0);
                           <th>Jumlah</th>
                       </tr>
                       <tr>
-                        <?php foreach($cancel as $row):?>
-                          <td>1</td>
-                          <td>Cancel</td>
-                          <td><?php $cncl= $row['COUNT(*)'];echo $cncl;?></td>
+                        <?php foreach($prospect as $row):?>
+                          <td>4</td>
+                          <td>Prospect</td>
+                          <td><?php $prpc =  $row['COUNT(*)']; echo $prpc;?></td>
+                          <?php endforeach;?>
+                      </tr>
+                      <tr>
+                            <?php foreach($proposal as $row):?>
+                              <td>5</td>
+                              <td>Proposal</td>
+                              <td><?php $prps=  $row['COUNT(*)']; echo $prps;?></td>
+                              <?php endforeach;?>
+                      </tr>
+                      <tr>
+                        <?php foreach($bidding as $row):?>
+                          <td>3</td>
+                          <td>Bidding</td>
+                          <td><?php $bdg =  $row['COUNT(*)']; echo $bdg;?></td>
+                          <?php endforeach;?>
+                      </tr>
+                      <tr>
+                        <?php foreach($bidding as $row):?>
+                          <td>3</td>
+                          <td>Win</td>
+                          <td><?php $bdg =  $row['COUNT(*)'];?></td>
                           <?php endforeach;?>
                       </tr>
                       <tr>
@@ -116,24 +137,10 @@ error_reporting(0);
                           <?php endforeach;?>
                       </tr>
                       <tr>
-                        <?php foreach($bidding as $row):?>
-                          <td>3</td>
-                          <td>bidding</td>
-                          <td><?php $bdg =  $row['COUNT(*)']; echo $bdg;?></td>
-                          <?php endforeach;?>
-                      </tr>
-                      <tr>
-                        <?php foreach($prospect as $row):?>
-                          <td>4</td>
-                          <td>Prospect</td>
-                          <td><?php $prpc =  $row['COUNT(*)']; echo $prpc;?></td>
-                          <?php endforeach;?>
-                      </tr>
-                      <tr>
-                        <?php foreach($proposal as $row):?>
-                          <td>5</td>
-                          <td>Proposal</td>
-                          <td><?php $prps=  $row['COUNT(*)']; echo $prps;?></td>
+                        <?php foreach($cancel as $row):?>
+                          <td>1</td>
+                          <td>Cancel</td>
+                          <td><?php $cncl= $row['COUNT(*)'];echo $cncl;?></td>
                           <?php endforeach;?>
                       </tr>
                   </table>
@@ -154,6 +161,7 @@ error_reporting(0);
         array_push($data, $prpc, ",");
         array_push($data, $prps,",");
         array_push($data, $bdg,",");
+        array_push($data,0,",");
         array_push($data, $ls,",");
         array_push($data, $cncl);
          foreach($data as $datas){ echo $datas;}
@@ -169,7 +177,7 @@ error_reporting(0);
       <script>
         //setup
         const data = {
-            labels:['PROSPECT','PROPOSAL','BIDDING','LOSE','CANCEL'],
+            labels:['PROSPECT','PROPOSAL','BIDDING','WIN','LOSE','CANCEL'],
           datasets: [
             {
               label: "Status chart",
