@@ -103,14 +103,14 @@ error_reporting(0);
                       </tr>
                       <tr>
                         <?php foreach($prospect as $row):?>
-                          <td>4</td>
+                          <td>1</td>
                           <td>Prospect</td>
                           <td><?php $prpc =  $row['COUNT(*)']; echo $prpc;?></td>
                           <?php endforeach;?>
                       </tr>
                       <tr>
                             <?php foreach($proposal as $row):?>
-                              <td>5</td>
+                              <td>2</td>
                               <td>Proposal</td>
                               <td><?php $prps=  $row['COUNT(*)']; echo $prps;?></td>
                               <?php endforeach;?>
@@ -124,21 +124,21 @@ error_reporting(0);
                       </tr>
                       <tr>
                         <?php foreach($bidding as $row):?>
-                          <td>3</td>
+                          <td>4</td>
                           <td>Win</td>
                           <td><?php $bdg =  $row['COUNT(*)'];?></td>
                           <?php endforeach;?>
                       </tr>
                       <tr>
                         <?php foreach($lose as $row):?>
-                          <td>2</td>
+                          <td>5</td>
                           <td>Lose</td>
                           <td><?php $ls=  $row['COUNT(*)']; echo $ls;?></td>
                           <?php endforeach;?>
                       </tr>
                       <tr>
                         <?php foreach($cancel as $row):?>
-                          <td>1</td>
+                          <td>6</td>
                           <td>Cancel</td>
                           <td><?php $cncl= $row['COUNT(*)'];echo $cncl;?></td>
                           <?php endforeach;?>
